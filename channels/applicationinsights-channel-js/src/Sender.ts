@@ -209,7 +209,7 @@ export class Sender extends BaseTelemetryPlugin implements IChannelControlsAI {
                 _base.initialize(config, core, extensions, pluginChain);
                 let ctx = _self._getTelCtx();
                 let identifier = _self.identifier;
-                _serializer = new Serializer(core.logger);
+                _serializer = new Serializer(core);
                 _consecutiveErrors = 0;
                 _retryAt = null;
                 _lastSend = 0;

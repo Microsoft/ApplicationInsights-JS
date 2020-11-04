@@ -1,22 +1,27 @@
 ﻿import { Util, ISerializable, FieldType } from '@microsoft/applicationinsights-common';
-import { IDiagnosticLogger, LoggingSeverity, _InternalMessageId, CoreUtils, getJSON } from '@microsoft/applicationinsights-core-js';
+import { IDiagnosticLogger, LoggingSeverity, _InternalMessageId, CoreUtils, getJSON, IAppInsightsCore, doPerf } from '@microsoft/applicationinsights-core-js';
 import dynamicProto from '@microsoft/dynamicproto-js'
 
 export class Serializer {
 
-    constructor(logger: IDiagnosticLogger) {
+    constructor(core: IAppInsightsCore) {
         dynamicProto(Serializer, this, (_self) => {
+
+            const logger=core.logger;
             /**
              * Serializes the current object to a JSON string.
-             */
+             */           
             _self.serialize = (input: ISerializable): string => {
-                const output = _serializeObject(input, "root");
-                try {
-                    return getJSON().stringify(output);
-                } catch (e) {
+                return doPerf(core, () => "Serializer.serialize", () => {
+                    const output = _serializeObject(input, "root");
+                    try {
+                        return getJSON().stringify(output);
+                    } catch (e) {
                     // if serialization fails return an empty string
-                    logger.throwInternal(LoggingSeverity.CRITICAL, _InternalMessageId.CannotSerializeObject, (e && CoreUtils.isFunction(e.toString)) ? e.toString() : "Error serializing object", null, true);
-                }
+                        logger.throwInternal(LoggingSeverity.CRITICAL, _InternalMessageId.CannotSerializeObject, (e && CoreUtils.isFunction(e.toString)) ? e.toString() : "Error serializing object", null, true);
+                    }
+                },() => ({ item: input }));
+                
             }
 
             function _serializeObject(source: ISerializable, name: string): any {

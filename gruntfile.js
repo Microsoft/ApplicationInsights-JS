@@ -351,7 +351,7 @@ module.exports = function (grunt) {
                         './AISKU/Tests/Selenium/Tests.html'
                     ],
                     timeout: 5 * 60 * 1000, // 5 min
-                    console: false,
+                    console: true,
                     summaryOnly: true,
                     '--web-security': 'false'
                 }

@@ -295,7 +295,7 @@ Most configuration fields are named such that they can be defaulted to falsey. A
 | isBrowserLinkTrackingEnabled | false | Default is false. If true, the SDK will track all [Browser Link](https://docs.microsoft.com/en-us/aspnet/core/client-side/using-browserlink) requests. |
 | appId | null | AppId is used for the correlation between AJAX dependencies happening on the client-side with the server-side requests. When Beacon API is enabled, it cannot be used automatically, but can be set manually in the configuration. Default is null |
 | enableCorsCorrelation | false | If true, the SDK will add two headers ('Request-Id' and 'Request-Context') to all CORS requests to correlate outgoing AJAX dependencies with corresponding requests on the server side. Default is false |
-| namePrefix | undefined | An optional value that will be used as name postfix for localStorage and cookie name.
+| namePrefix | undefined | An optional value that will be used as name postfix for sessionStorage and cookie name.
 | enableAutoRouteTracking | false | Automatically track route changes in Single Page Applications (SPA). If true, each route change will send a new Pageview to Application Insights. Hash route changes changes (`example.com/foo#bar`) are also recorded as new page views.
 | enableRequestHeaderTracking | false | If true, AJAX & Fetch request headers is tracked, default is false.
 | enableResponseHeaderTracking | false | If true, AJAX & Fetch request's response headers is tracked, default is false.

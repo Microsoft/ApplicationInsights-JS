@@ -275,7 +275,7 @@ Most configuration fields are named such that they can be defaulted to falsey. A
 | samplingPercentage | 100 | Percentage of events that will be sent. Default is 100, meaning all events are sent. Set this if you wish to preserve your datacap for large-scale applications. |
 | autoTrackPageVisitTime | false | If true, on a pageview,the previous instrumented page's view time is tracked and sent as telemetry and a new timer is started for the current pageview. Default is false. |
 | disableAjaxTracking | false | If true, Ajax calls are not autocollected. Default is false. |
-| disableFetchTracking | true | If true, Fetch requests are not autocollected. Default is true |
+| disableFetchTracking | false | If true, Fetch requests are not autocollected. Default is false |
 | overridePageViewDuration | false | If true, default behavior of trackPageView is changed to record end of page view duration interval when trackPageView is called. If false and no custom duration is provided to trackPageView, the page view performance is calculated using the navigation timing API. Default is false. |
 | maxAjaxCallsPerView | 500 | Default 500 - controls how many ajax calls will be monitored per page view. Set to -1 to monitor all (unlimited) ajax calls on the page. |
 | disableDataLossAnalysis | true | If false, internal telemetry sender buffers will be checked at startup for items not yet sent. |

@@ -89,7 +89,7 @@ export function __decorateFn(decorators: any, target: any, key: any, desc: any) 
         r = ReflectObj[strDecorate](decorators, target, key, desc);
     } else {
         for (var i = decorators.length - 1; i >= 0; i--) {
-            // tslint:disable-next-line:no-conditional-assignment
+            // eslint-disable-next-line no-cond-assign
             if (d = decorators[i]) {
                 r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
             }
@@ -180,7 +180,7 @@ export function __readFn(o: any, n: any) {
             }
         } finally { 
             if (e) {
-                // tslint:disable-next-line:no-unsafe-finally
+                // eslint-disable-next-line no-unsafe-finally
                 throw e.error; 
             }
         }

@@ -40,13 +40,13 @@
         "qunit": "^2.11.2",
         "sinon": "^7.3.1",
         "chromedriver": "^2.45.0",
-        "@microsoft/api-extractor": "^7.9.11",
+        "@microsoft/api-extractor": "^7.18.1",
         "finalhandler": "^1.1.1",
         "grunt": "^1.4.1",
         "grunt-cli": "^1.4.3",
         "grunt-contrib-qunit": "^5.0.1",
         "@nevware21/grunt-ts-plugin": "^0.3.0",
-        "grunt-tslint": "^5.0.2",
+        "@nevware21/grunt-eslint-ts": "^0.1.0",
         "globby": "^11.0.0",
         "magic-string": "^0.25.7",
         "pako":"^2.0.3",
@@ -58,10 +58,11 @@
         "selenium-server-standalone-jar": "^3.141.5",
         "serve-static": "^1.13.2",
         "source-map-loader": "^0.2.3",
-        "tslint": "^5.19.0",
-        "tslint-config-prettier": "^1.18.0",
-        "typescript": "2.5.3",
-        "tslib": "^1.13.0"
+        "typescript": "^4.3.4",
+        "tslib": "^2.0.0"
+    },
+    "peerDependencies": {
+        "tslib": "*"
     },
     "dependencies": {
         "@microsoft/dynamicproto-js": "^1.1.4",

@@ -1,7 +1,8 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, Context } from "react";
 import ReactPlugin from "./ReactPlugin";
 
-const AppInsightsContext = createContext<ReactPlugin>(undefined);
+export declare type AppInsightsReactContext = Context<ReactPlugin>
+const AppInsightsContext = createContext<ReactPlugin>(undefined) as AppInsightsReactContext;
 
 const useAppInsightsContext = () => useContext(AppInsightsContext);
 

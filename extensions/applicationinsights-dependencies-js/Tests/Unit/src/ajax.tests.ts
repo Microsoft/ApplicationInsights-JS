@@ -1,4 +1,5 @@
-﻿import { Assert, AITestClass, PollingAssert } from "@microsoft/ai-test-framework";
+﻿import { SinonStub } from "sinon";
+import { Assert, AITestClass, PollingAssert } from "@microsoft/ai-test-framework";
 import { AjaxMonitor } from "../../../src/ajax";
 import { DisabledPropertyName, IConfig, DistributedTracingModes, RequestHeaders, IDependencyTelemetry } from "@microsoft/applicationinsights-common";
 import {

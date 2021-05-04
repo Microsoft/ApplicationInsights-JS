@@ -50,7 +50,7 @@ function _supportsAjaxMonitoring(ajaxMonitorInstance:AjaxMonitor): boolean {
     if (typeof XMLHttpRequest !== strUndefined && !isNullOrUndefined(XMLHttpRequest)) {
         let proto = XMLHttpRequest[strPrototype];
         result = !isNullOrUndefined(proto) &&
-            !isNullOrUndefined(proto.open) &&
+            !isNullOrUndefined(proto.open) && // eslint-disable-line security/detect-non-literal-fs-filename -- false positive
             !isNullOrUndefined(proto.send) &&
             !isNullOrUndefined(proto.abort);
     }
@@ -93,7 +93,9 @@ function _getFailedAjaxDiagnosticsMessage(xhr: XMLHttpRequestInstrumented): stri
             !isNullOrUndefined(xhr[strAjaxData].requestUrl)) {
             result += "(url: '" + xhr[strAjaxData].requestUrl + "')";
         }
-    } catch (e) { }
+    } catch (e) { 
+        // eslint-disable-next-line no-empty
+    }
 
     return result;
 }

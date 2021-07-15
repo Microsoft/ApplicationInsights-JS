@@ -11,6 +11,8 @@
     "noEmitHelpers": true,
     "skipLibCheck": true,
     "alwaysStrict": true,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
     "declaration": true,
     "declarationDir": "shared/AppInsightsCore/types",
     "outDir": "./dist-esm",

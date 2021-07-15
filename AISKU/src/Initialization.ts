@@ -371,10 +371,10 @@ export class Initialization implements IApplicationInsights {
 
                 // apply updated properties to the global instance (snippet)
                 objForEachKey(_self, (field, value) => {
-                    if (isString(field) && 
-                            !isFunction(value) && 
+                    if (isString(field) &&
+                            !isFunction(value) &&
                             field && field[0] !== "_" &&                                // Don't copy "internal" values
-                            _ignoreUpdateSnippetProperties.indexOf(field) === -1) {            
+                            _ignoreUpdateSnippetProperties.indexOf(field) === -1) {
                         snippet[field as string] = value;
                     }
                 });

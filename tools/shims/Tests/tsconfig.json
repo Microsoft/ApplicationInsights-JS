@@ -5,11 +5,12 @@
         "noImplicitAny": false,
         "module": "amd",
         "moduleResolution": "node",
-        "target": "es3",
+        "target": "es5",
         "alwaysStrict": true,
         "declaration": true,
         "importHelpers": false,
-        "noEmitHelpers": true
+        "noEmitHelpers": true,
+        "skipLibCheck": true
     },
     "files": [],
     "exclude": [

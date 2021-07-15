@@ -718,6 +718,7 @@ export class AITestClass {
             try {
                 this._removeFuncHooks(target[name]);
             } catch (e) {
+                // eslint-disable-next-line no-empty
             }
         });
     }

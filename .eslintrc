@@ -1,0 +1,36 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "plugins": [
+        "security"
+    ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:security/recommended"
+    ],
+    "rules": {
+        "quotes": ["off", "double"],                                // Re-enable for auto fixing
+        "prefer-const": "off",
+        "prefer-spread": "off",
+        "no-var": "off",
+        "no-extra-boolean-cast": "off",
+        "prefer-rest-params": "off",
+        "no-case-declarations": "off",
+        "no-prototype-builtins": "off",
+        "no-useless-escape": "off",                                 // Suppressing Error -- need to Review Later
+        "security/detect-object-injection": "off",                  // Suppress Warning -- need to Review Later
+        "@typescript-eslint/ban-types": "off",
+        "@typescript-eslint/no-unused-vars": "off",                 // Re-enable for auto fixing
+        "@typescript-eslint/triple-slash-reference": "off",
+        "@typescript-eslint/no-inferrable-types": "off",
+        "@typescript-eslint/no-this-alias": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/no-empty-interface": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/no-extra-semi": "off"                   // Re-enable for auto fixing
+    }
+}

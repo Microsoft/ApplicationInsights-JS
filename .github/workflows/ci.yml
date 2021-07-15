@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x]
+        node-version: [10.x, 12.x, 14.x, 16.x]
 
     steps:
     - uses: actions/checkout@v2
@@ -24,7 +24,11 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - run: npm install rollup -g
+    - run: npm install grunt-cli findup-sync nopt pify@2.3.0
     - run: npm install
+    - run: node common/scripts/install-run-rush.js check
+    - run: node common/scripts/install-run-rush.js install
     - run: npm run build --verbose
       timeout-minutes: 10
     - run: npm run test --verbose

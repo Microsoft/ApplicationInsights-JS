@@ -811,7 +811,7 @@ export class Sender extends BaseTelemetryPlugin implements IChannelControlsAI {
                 const xdr = new XDomainRequest();
                 xdr.onload = () => _self._xdrOnLoad(xdr, payload);
                 xdr.onerror = (event: ErrorEvent|any) => _self._onError(payload, _formatErrorMessageXdr(xdr), event);
-
+        
                 // XDomainRequest requires the same protocol as the hosting page.
                 // If the protocol doesn't match, we can't send the telemetry :(.
                 const hostingProtocol = _window && _window.location && _window.location.protocol || "";

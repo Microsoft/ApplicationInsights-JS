@@ -1,10 +1,10 @@
-import { TestClass } from './TestFramework/TestClass';
-import { Sample } from "../src/TelemetryProcessors/Sample";
+import { AITestClass } from "@microsoft/ai-test-framework";
+import { Sample } from "../../../src/TelemetryProcessors/Sample";
 import { ITelemetryItem } from "@microsoft/applicationinsights-core-js";
 import { PageView, TelemetryItemCreator, IPageViewTelemetry, Util } from "@microsoft/applicationinsights-common";
-import { HashCodeScoreGenerator } from "../src/TelemetryProcessors/SamplingScoreGenerators/HashCodeScoreGenerator";
+import { HashCodeScoreGenerator } from "../../../src/TelemetryProcessors/SamplingScoreGenerators/HashCodeScoreGenerator";
 
-export class SampleTests extends TestClass {
+export class SampleTests extends AITestClass {
     private sample: Sample
     private item: ITelemetryItem;
 

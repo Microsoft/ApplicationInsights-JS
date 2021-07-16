@@ -32,7 +32,7 @@
         "grunt-cli": "^1.4.3",
         "grunt-contrib-qunit": "^5.0.1",
         "grunt-run": "^0.8.1",
-        "@nevware21/grunt-ts-plugin": "^0.3.0",
+        "@nevware21/grunt-ts-plugin": "^0.4.2",
         "globby": "^11.0.0",
         "magic-string": "^0.25.7",
         "@rollup/plugin-commonjs": "^18.0.0",
@@ -41,7 +41,9 @@
         "rollup-plugin-cleanup": "3.2.1",
         "rollup": "^2.32.0",
         "tslint": "^5.19.0",
-        "tslint-config-prettier": "^1.18.0"
+        "tslint-config-prettier": "^1.18.0",
+        "qunit": "^2.11.2",
+        "sinon": "^7.3.1"
     },
     "dependencies": {
         "@microsoft/dynamicproto-js": "^1.1.4",

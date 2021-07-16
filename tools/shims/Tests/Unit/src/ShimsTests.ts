@@ -3,14 +3,8 @@ import {
     objCreateFn, getGlobal,
     strShimFunction, strShimHasOwnProperty, strShimObject, strShimPrototype, strShimUndefined 
 } from "../../../src/applicationinsights-shims";
-
-import { 
-    __extendsFn, __assignFn, __objAssignFnImpl
-} from "../../../src/TsLibShims";
-
-import { 
-    __exposeGlobalTsLib
-} from "../../../src/TsLibGlobals";
+import { __extendsFn, __assignFn, __objAssignFnImpl }  from "../../../src/TsLibShims";
+import { __exposeGlobalTsLib }  from "../../../src/TsLibGlobals";
 
 __exposeGlobalTsLib();
 

@@ -145,10 +145,9 @@ module.exports = function (grunt) {
             aichanneltest: {
                 tsconfig: './channels/applicationinsights-channel-js/Tests/tsconfig.json',
                 src: [
-                    './channels/applicationinsights-channel-js/Tests/Selenium/*.ts',
-                    './channels/applicationinsights-channel-js/Tests/*.ts',
+                    './channels/applicationinsights-channel-js/Tests/Unit/src/**/*.ts'
                 ],
-                out: './channels/applicationinsights-channel-js/Tests/Selenium/aichannel.tests.js'
+                out: './channels/applicationinsights-channel-js/Tests/Unit/dist/aichannel.tests.js'
             },
             rollupuglify: {
                 tsconfig: './tools/rollup-plugin-uglify3-js/tsconfig.json',
@@ -302,7 +301,7 @@ module.exports = function (grunt) {
             aichannel: {
                 options: {
                     urls: [
-                        'http://localhost:9001/channels/applicationinsights-channel-js/Tests/Selenium/Tests.html'
+                        'http://localhost:9001/channels/applicationinsights-channel-js/Tests/UnitTests.html'
                     ],
                     timeout: 300 * 1000, // 5 min
                     console: false,

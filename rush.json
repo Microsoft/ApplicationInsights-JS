@@ -2,8 +2,8 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
 
-  "npmVersion": "7.19.1",
-  "rushVersion": "5.47.0",
+  "npmVersion": "7.20.0",
+  "rushVersion": "5.49.2",
   "projectFolderMaxDepth": 4,
   "projects": [
     {

@@ -5,17 +5,16 @@
     <meta charset="utf-8">
     <meta http-equiv="Cache-control" content="no-Cache" />
     <title>Tests for Application Insights JavaScript API</title>
-    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.9.1.css">
-    <!-- <script src="http://sinonjs.org/releases/sinon-7.3.1.js"></script> -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js"></script>
-    <script src="../../../../common/Tests/Selenium/ModuleLoader.js"></script>
-    <script src="../../../../common/Tests/Selenium/SimpleSyncPromise.js"></script>
-
+    <link rel="stylesheet" href="../../../common/Tests//External/qunit-2.9.1.css">
+    <!-- <script src="../../../common/Tests/External/sinon-7.3.1.js"></script> -->
+    <script src="../../../common/Tests/External/require-2.3.6.js"></script>
+    <script src="../../../common/Tests/Selenium/ModuleLoader.js"></script>
+    <script src="../../../common/Tests/Selenium/SimpleSyncPromise.js"></script>    
     <script>
         var modules = new ModuleLoader({
-            baseUrl: '../../',
+            baseUrl: '../',
             paths: {
-                qunit: "../../common/Tests/External/qunit-2.9.1",
+                qunit: "../../common/Tests/External/qunit-1.23.1",
                 sinon: "../../common/Tests/External/sinon-7.3.1",
                 "whatwg-fetch": "../../common/Tests/External/whatwg-fetch.3.0.0"
             }
@@ -26,12 +25,7 @@
         modules.add("sinon");
 
         loadFetchModule(modules, "whatwg-fetch");
-
-        // Load and define the app insights Shims module
-        modules.add("@microsoft/applicationinsights-shims", "./node_modules/@microsoft/applicationinsights-shims/browser/applicationinsights-shims");
-
-        // Load DynamicProto
-        modules.add("@microsoft/dynamicproto-js", "./node_modules/@microsoft/dynamicproto-js/lib/dist/umd/dynamicproto-js", true);
+        loadCommonModules(modules);
 
         // Load Core
         modules.add("@microsoft/applicationinsights-core-js", "./node_modules/@microsoft/applicationinsights-core-js/browser/applicationinsights-core-js");
@@ -39,7 +33,7 @@
         // Load Common
         modules.add("@microsoft/applicationinsights-common", "./node_modules/@microsoft/applicationinsights-common/browser/applicationinsights-common");
 
-        var testModule = modules.add("Tests/Selenium/aichannel.tests", "./aichannel.tests.js")
+        var testModule = modules.add("Tests/Unit/src/aichannel.tests", "./Unit/dist/aichannel.tests.js");
         testModule.run = function (tests) {
             console && console.log("Starting tests");
             QUnit.start();

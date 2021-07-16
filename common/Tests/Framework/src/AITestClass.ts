@@ -37,7 +37,7 @@ export class AITestClass {
     public static orgSetTimeout: (handler: Function, timeout?: number) => number;
     public static orgClearTimeout: (handle?: number) => void;
     public static orgObjectDefineProperty = Object.defineProperty;
-
+    
     /**** Sinon methods and properties ***/
 
     // These methods and properties are injected by Sinon and will override the implementation here.

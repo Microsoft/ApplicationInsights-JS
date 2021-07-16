@@ -27,6 +27,17 @@ function loadFetchModule(moduleLoader, name) {
     };
 }
 
+function loadCommonModules(moduleLoader) {
+    // Load and define the app insights test framework module
+    moduleLoader.add("@microsoft/ai-test-framework", "./node_modules/@microsoft/ai-test-framework/dist/ai-test-framework");
+
+    // Load and define the app insights Shims module
+    moduleLoader.add("@microsoft/applicationinsights-shims", "./node_modules/@microsoft/applicationinsights-shims/browser/applicationinsights-shims");
+
+    // Load DynamicProto
+    moduleLoader.add("@microsoft/dynamicproto-js", "./node_modules/@microsoft/dynamicproto-js/lib/dist/umd/dynamicproto-js", true);
+}
+
 function ModuleLoader(config) {
 
     if (config) {

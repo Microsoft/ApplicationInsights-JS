@@ -1,11 +1,11 @@
-import { TestClass } from './TestFramework/TestClass';
-import { Sender } from "../src/Sender";
-import { Offline } from '../src/Offline';
-import { EnvelopeCreator } from '../src/EnvelopeCreator';
+import { AITestClass } from "@microsoft/ai-test-framework";
+import { Sender } from "../../../src/Sender";
+import { Offline } from '../../../src/Offline';
+import { EnvelopeCreator } from '../../../src/EnvelopeCreator';
 import { Exception, CtxTagKeys, Util } from "@microsoft/applicationinsights-common";
 import { ITelemetryItem, AppInsightsCore, ITelemetryPlugin, DiagnosticLogger, NotificationManager, SendRequestReason, _InternalMessageId, LoggingSeverity, getGlobalInst, getGlobal } from "@microsoft/applicationinsights-core-js";
 
-export class SenderTests extends TestClass {
+export class SenderTests extends AITestClass {
     private _sender: Sender;
     private _instrumentationKey = 'iKey';
 
@@ -47,6 +47,7 @@ export class SenderTests extends TestClass {
 
         this.testCase({
             name: "processTelemetry can be called with optional fields undefined",
+            useFakeTimers: true,
             test: () => {
                 this._sender.initialize({
                     instrumentationKey: 'abc'
@@ -151,6 +152,7 @@ export class SenderTests extends TestClass {
 
         this.testCase({
             name: 'beaconSender is called when isBeaconApiDisabled flag is false',
+            useFakeTimers: true,
             test: () => {
                 let sendBeaconCalled = false;
                 this.hookSendBeacon((url: string) => {
@@ -193,6 +195,7 @@ export class SenderTests extends TestClass {
 
         this.testCase({
             name: 'BeaconAPI is not used when isBeaconApiDisabled flag is false but payload size is over 64k, fall off to xhr sender',
+            useFakeTimers: true,
             test: () => {
                 let sendBeaconCalled = false;
                 this.hookSendBeacon((url: string) => {
@@ -916,6 +919,7 @@ export class SenderTests extends TestClass {
 
         this.testCase({
             name: 'Offline watcher responds to offline events (window.addEventListener)',
+            useFakeTimers: true,
             test: () => {
                 // Setup
                 const offlineEvent = new Event('offline');
@@ -1020,6 +1024,7 @@ export class SenderTests extends TestClass {
 
         this.testCase({
             name: "Channel Config: Notification is sent when requests are being sent when requests exceed max batch size",
+            useFakeTimers: true,
             test: () => {
                 let sendNotifications = [];
                 let notificationManager = new NotificationManager();
@@ -1072,6 +1077,7 @@ export class SenderTests extends TestClass {
 
         this.testCase({
             name: "Channel Config: Notification is sent when requests are being sent with manual flush",
+            useFakeTimers: true,
             test: () => {
                 let sendNotifications = [];
                 let notificationManager = new NotificationManager();

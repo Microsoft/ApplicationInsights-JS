@@ -5,6 +5,7 @@ import {
     AppInsightsCore, IConfiguration, ITelemetryItem, ITelemetryPlugin, IChannelControls, _InternalMessageId,
     getPerformance, getGlobalInst, getGlobal
 } from "@microsoft/applicationinsights-core-js";
+import { SinonStub } from "sinon";
 
 interface IFetchArgs {
     input: RequestInfo,

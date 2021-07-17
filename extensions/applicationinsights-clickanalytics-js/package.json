@@ -35,7 +35,7 @@
         "grunt-cli": "^1.4.3",
         "grunt-contrib-qunit": "^5.0.1",
         "grunt-run": "^0.8.1",
-        "@nevware21/grunt-ts-plugin": "^0.3.0",
+        "@nevware21/grunt-ts-plugin": "^0.4.3",
         "tslint": "^5.19.0",
         "tslint-config-prettier": "^1.18.0"
     },

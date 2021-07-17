@@ -1,8 +1,6 @@
 import { AITestClass } from "@microsoft/ai-test-framework";
 import { es3Check, es3Poly, importCheck } from "../../../src/applicationinsights-rollup-es3";
 
-//import * as sinon from 'sinon';
-
 export class Es3RollupTests extends AITestClass {
 
     public testInitialize() {

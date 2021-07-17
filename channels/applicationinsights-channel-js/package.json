@@ -20,16 +20,16 @@
         "dtsgen": "api-extractor run --local && node ../../scripts/dtsgen.js \"Microsoft Application Insights JavaScript SDK Channel\""
     },
     "devDependencies": {
+        "@microsoft/ai-test-framework": "0.0.1",
         "@microsoft/applicationinsights-rollup-plugin-uglify3-js": "1.0.0",
         "@microsoft/applicationinsights-rollup-es3": "1.1.3",
         "@microsoft/api-extractor": "^7.9.11",
-        "@types/qunit": "^2.5.3",
         "@types/sinon": "4.3.3",
         "grunt": "^1.4.1",
         "grunt-cli": "^1.4.3",
         "grunt-contrib-qunit": "^5.0.1",
         "grunt-run": "^0.8.1",
-        "@nevware21/grunt-ts-plugin": "^0.3.0",
+        "@nevware21/grunt-ts-plugin": "^0.4.3",
         "globby": "^11.0.0",
         "magic-string": "^0.25.7",
         "@rollup/plugin-commonjs": "^18.0.0",
@@ -41,7 +41,6 @@
         "tslib": "^1.13.0",
         "tslint": "^5.19.0",
         "tslint-config-prettier": "^1.18.0",
-        "qunit": "^2.11.2",
         "sinon": "^7.3.1"
     },
     "dependencies": {

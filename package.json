@@ -20,7 +20,7 @@
         "rupdate": "node common/scripts/install-run-rush.js update --recheck --purge --full",
         "serve": "grunt serve",
         "setVersion": "node ./tools/release-tools/setVersion.js",
-        "fullClean": "git clean -xdf && npm install && rush update --recheck --purge --full",
+        "fullClean": "git clean -xdf && npm install && rush update --recheck --full",
         "fullCleanBuild": "npm run fullClean && npm run rebuild"
     },
     "repository": {
@@ -34,22 +34,23 @@
     },
     "homepage": "https://github.com/microsoft/ApplicationInsights-JS#readme",
     "devDependencies": {
+        "@microsoft/rush": "^5.49.2",
+        "@nevware21/grunt-ts-plugin": "^0.4.3",
+        "chromium": "^3.0.2",
+        "connect": "^3.7.0",
         "grunt": "^1.4.1",
         "grunt-cli": "^1.4.3",
         "grunt-contrib-connect": "^3.0.0",
         "grunt-contrib-qunit": "^5.0.1",
         "grunt-contrib-uglify": "^5.0.1",
         "grunt-run": "^0.8.1",
-        "@nevware21/grunt-ts-plugin": "^0.3.0",
         "grunt-tslint": "^5.0.2",
-        "tslint": "^5.19.0",
-        "tslint-microsoft-contrib": "^5.2.1",
-        "tslint-config-prettier": "^1.18.0",
-        "typescript": "2.5.3",
-        "whatwg-fetch": "^3.0.0",
-        "typedoc": "^0.16.9",
-        "connect": "^3.7.0",
         "puppeteer": "^10.1.0",
-        "chromium": "^3.0.2"
+        "tslint": "^5.19.0",
+        "tslint-config-prettier": "^1.18.0",
+        "tslint-microsoft-contrib": "^5.2.1",
+        "typedoc": "^0.16.9",
+        "typescript": "2.5.3",
+        "whatwg-fetch": "^3.0.0"
     }
 }
